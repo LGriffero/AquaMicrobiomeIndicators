@@ -19,5 +19,5 @@ Imports:
     ggplot2
     permute
 Roxygen: list(markdown = TRUE)
-
-    
+URL: https://github.com/LGriffero/AquaMicrobiomeIndicators
+BugReports: https://github.com/LGriffero/AquaMicrobiomeIndicators/issues
