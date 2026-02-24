@@ -11,10 +11,10 @@ predict_indicators(abundance_matrix, indicator_table, true_group = NULL)
 
 \item{indicator_table}{Output from run_indval_analysis()}
 
-\item{true_group}{Optional vector with true ecological group for each sample}
+\item{true_group}{Optional vector with true ecological group}
 }
 \value{
-A list with predictions, optional accuracy and confusion matrix
+A list with predictions and performance metrics
 }
 \description{
 Predict ecological quality group using indicator taxa

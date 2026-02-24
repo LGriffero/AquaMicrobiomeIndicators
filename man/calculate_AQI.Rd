@@ -4,17 +4,19 @@
 \alias{calculate_AQI}
 \title{Calculate Aquatic Quality Index (AQI)}
 \usage{
-calculate_AQI(data, thresholds)
+calculate_AQI(data, thresholds, group_cols)
 }
 \arguments{
-\item{data}{Data frame containing Site column and contaminant concentrations.}
+\item{data}{Data frame containing grouping columns and contaminant concentrations.}
 
 \item{thresholds}{Data frame with columns: contaminant and limit.}
+
+\item{group_cols}{Character vector with grouping column names.}
 }
 \value{
-Data frame with F1, F2, F3 and final AQI per site.
+Data frame with F1, F2, F3 and final AQI per group.
 }
 \description{
 Calculates AQI following the CCME-WQI conceptual framework
-using contaminant concentration thresholds (e.g., PNEC values).
+using contaminant concentration thresholds.
 }

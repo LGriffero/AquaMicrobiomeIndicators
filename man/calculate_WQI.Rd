@@ -2,18 +2,30 @@
 % Please edit documentation in R/calculate_WQI.R
 \name{calculate_WQI}
 \alias{calculate_WQI}
-\title{Calculate Water Quality Index (WQI)}
+\title{Calculate Water Quality Index (CCME-WQI)}
 \usage{
-calculate_WQI(data, limits)
+calculate_WQI(data, limits, group_cols)
 }
 \arguments{
-\item{data}{Data frame containing physicochemical parameters}
+\item{data}{Data frame containing water quality variables.}
 
-\item{limits}{Named list of threshold functions}
+\item{limits}{Named list defining threshold type and values.}
+
+\item{group_cols}{Character vector of grouping columns.}
 }
 \value{
-Data frame with WQI values
+Tibble with F1, F2, F3 and WQI.
 }
 \description{
-Calculate Water Quality Index (WQI)
+Calculates the Water Quality Index (WQI) following the official
+Canadian Council of Ministers of the Environment (CCME) framework.
+}
+\details{
+Limits must be provided as a named list with structure:
+
+  list(
+    Variable = list(type = "max", limit = value),
+    Variable = list(type = "min", limit = value),
+    Variable = list(type = "range", min = value, max = value)
+  )
 }

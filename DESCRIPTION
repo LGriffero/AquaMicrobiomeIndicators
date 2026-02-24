@@ -1,23 +1,30 @@
 Package: AquaMicrobiomeIndicators
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Adaptive Indicator Species Analysis for Aquatic Microbiome Assessment
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: 
+    person("Luciana", "Griffero",
+           email = "lugrif@gmail.com",
+           role = c("aut", "cre"))
+Description: Provides tools for adaptive indicator species analysis in aquatic 
+    microbiome datasets. The package integrates flexible threshold selection 
+    for fidelity (A), specificity (B), and sqrtIV pruning, along with coverage 
+    estimation to support ecological status assessment across environmental 
+    gradients.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
 Imports:
     dplyr,
     tidyr,
-    stringr,
-    vegan,
     indicspecies,
-    ggplot2
-    permute
-Roxygen: list(markdown = TRUE)
+    rlang,
+    magrittr
+Suggests:
+    ggplot2,
+    vegan,
+    permute,
+    stringr
 URL: https://github.com/LGriffero/AquaMicrobiomeIndicators
 BugReports: https://github.com/LGriffero/AquaMicrobiomeIndicators/issues

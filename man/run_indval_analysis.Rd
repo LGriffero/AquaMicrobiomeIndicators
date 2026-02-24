@@ -2,31 +2,55 @@
 % Please edit documentation in R/run_indval_analysis.R
 \name{run_indval_analysis}
 \alias{run_indval_analysis}
-\title{Run Indicator Species Analysis}
+\title{Run indicator species analysis with adaptive pruning}
 \usage{
 run_indval_analysis(
   asv_matrix,
   groups,
-  method = "IndVal.g",
-  nperm = 999,
+  B_threshold = 0.5,
+  At_start = 1,
+  At_min = 0.6,
+  At_step = 0.05,
+  sqrtIVt_start = 0.8,
+  sqrtIVt_min = 0.4,
+  sqrtIVt_step = 0.05,
+  max.order = 3,
   presence_absence = TRUE
 )
 }
 \arguments{
-\item{asv_matrix}{Matrix or data frame (sites × taxa).}
+\item{asv_matrix}{Matrix or data.frame of taxa abundances
+(rows = sites, columns = taxa).}
 
-\item{groups}{Vector of group assignments per site.}
+\item{groups}{Vector of group assignments (same length as rows of asv_matrix).}
 
-\item{method}{Association method ("IndVal.g", "r", "r.g").}
+\item{B_threshold}{Numeric vector of fidelity (B) thresholds per group.
+If shorter than the number of groups, the first value is reused.}
 
-\item{nperm}{Number of permutations.}
+\item{At_start}{Initial specificity (At) threshold.}
 
-\item{presence_absence}{Logical; convert abundances to PA.}
+\item{At_min}{Minimum specificity threshold allowed during adaptive reduction.}
+
+\item{At_step}{Step size for reducing At threshold.}
+
+\item{sqrtIVt_start}{Initial sqrtIV threshold.}
+
+\item{sqrtIVt_min}{Minimum sqrtIV threshold allowed during adaptive reduction.}
+
+\item{sqrtIVt_step}{Step size for reducing sqrtIV threshold.}
+
+\item{max.order}{Maximum order of species combinations.}
+
+\item{presence_absence}{Logical; if TRUE, converts abundances to presence/absence.}
 }
 \value{
-multipatt object.
+A list with:
+\describe{
+  \item{indicators}{Data frame of selected indicator taxa per group.}
+  \item{coverage}{Coverage values per group.}
+}
 }
 \description{
-Performs indicator species analysis using IndVal, rphi or r.g
-from the indicspecies package.
+Performs indicator species analysis using the IndVal framework
+with adaptive pruning of specificity (At) and sqrtIV thresholds.
 }
