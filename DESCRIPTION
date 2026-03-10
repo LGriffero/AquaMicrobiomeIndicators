@@ -20,11 +20,11 @@ Imports:
     tidyr,
     indicspecies,
     rlang,
-    magrittr
+    magrittr,
+    vegan,
+    permute
 Suggests:
     ggplot2,
-    vegan,
-    permute,
     stringr
 URL: https://github.com/LGriffero/AquaMicrobiomeIndicators
 BugReports: https://github.com/LGriffero/AquaMicrobiomeIndicators/issues
